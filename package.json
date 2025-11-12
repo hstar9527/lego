@@ -1,0 +1,33 @@
+{
+  "name": "lego_vite",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "ant-design-vue": "^2.0.0-rc.5",
+    "vue": "^3.5.22",
+    "vue-router": "^4.0.14",
+    "vuex": "^4.0.2",
+    "path-to-regexp": "^6.2.0",
+    "axios": "^0.27.2",
+    "lodash-es": "^4.17.21",
+    "uuid": "^8.3.2",
+    "lego-bricks": "^1.0.0",
+    "html2canvas": "^1.0.0-rc.7",
+    "qrcode": "^1.4.4",
+    "file-saver": "^2.0.5"
+  },
+  "devDependencies": {
+    "@types/node": "^24.6.0",
+    "@vitejs/plugin-vue": "^6.0.1",
+    "@vue/tsconfig": "^0.8.1",
+    "typescript": "~5.9.3",
+    "vite": "^7.1.7",
+    "vue-tsc": "^3.1.0"
+  }
+}
