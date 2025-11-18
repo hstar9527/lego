@@ -39,7 +39,7 @@ export default defineComponent({
     });
     onMounted(() => {
       store.dispatch("fetchTemplates", {
-        searchParams: { pageIndex: 0, pageSize: 4 },
+        searchParams: { pageIndex: 0, pageSize: 10 },
       });
       // 使用 loadMorePage 非常容易就实现了一个下拉加载
       // window.addEventListener('scroll', (e) => {

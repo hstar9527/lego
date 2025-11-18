@@ -1,9 +1,9 @@
-import { Module } from 'vuex'
-import { GlobalDataProps, actionWrapper } from './index'
-import { RespListData, RespData } from './respTypes'
-import { PageData } from './editor'
+import { Module } from "vuex";
+import { GlobalDataProps, actionWrapper } from "./index";
+import { RespListData, RespData } from "./respTypes";
+import { PageData } from "./editor";
 
-export type TemplateProps = Required<Omit<PageData, 'props' | 'setting'>>
+export type TemplateProps = Required<Omit<PageData, "props" | "setting">>;
 
 export interface TemplatesProps {
   data: TemplateProps[];
@@ -17,33 +17,33 @@ const templates: Module<TemplatesProps, GlobalDataProps> = {
     data: [],
     totalTemplates: 0,
     works: [],
-    totalWorks: 0
+    totalWorks: 0,
   },
   mutations: {
     fetchTemplates(state, rawData: RespListData<TemplateProps>) {
-      const { count, list } = rawData.data
-      state.data = [ ...state.data, ...list ]
-      state.totalTemplates = count
+      const { count, list } = rawData.data;
+      state.data = [...state.data, ...list];
+      state.totalTemplates = count;
     },
     fetchWorks(state, rawData: RespListData<TemplateProps>) {
-      const { count, list } = rawData.data
-      state.works = list
-      state.totalWorks = count
+      const { count, list } = rawData.data;
+      state.works = list;
+      state.totalWorks = count;
     },
     fetchTemplate(state, rawData: RespData<TemplateProps>) {
-      state.data = [rawData.data]
-    }
+      state.data = [rawData.data];
+    },
   },
   actions: {
-    fetchTemplates: actionWrapper('/templates', 'fetchTemplates'),
-    fetchWorks: actionWrapper('/works', 'fetchWorks'),
-    fetchTemplate: actionWrapper('/templates/:id', 'fetchTemplate')
+    fetchTemplates: actionWrapper("/templates", "fetchTemplates"),
+    fetchWorks: actionWrapper("/works", "fetchWorks"),
+    fetchTemplate: actionWrapper("/templates/:id", "fetchTemplate"),
   },
   getters: {
-    getTemplateById: (state, getters, rootState) => (id: number) => {
-      return state.data.find(t => t.id === id)
-    }
-  }
-}
+    getTemplateById: (state) => (id: number) => {
+      return state.data.find((t) => t.id === id);
+    },
+  },
+};
 
-export default templates
+export default templates;
