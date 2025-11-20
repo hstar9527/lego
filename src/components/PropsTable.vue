@@ -22,6 +22,7 @@
               :key="k"
               :value="option.value"
             >
+              <!-- {{ option.text }} -->
               <render-vnode :vNode="option.text"></render-vnode>
             </component>
           </template>

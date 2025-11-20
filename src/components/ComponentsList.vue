@@ -9,10 +9,10 @@
       <l-text v-bind="item"></l-text>
     </div>
   </div>
-  <StyledUploader
+  <styled-uploader
     class="component-item"
     @success="onImageUploaded"
-  ></StyledUploader>
+  ></styled-uploader>
 </template>
 
 <script lang="ts">
